@@ -69,7 +69,7 @@ class Order{
     showOrder(){
         let productsOrder = '';
         for(let product of this._products){
-            productsOrder += product.toString() + ' ';
+            productsOrder += '\n{' + product.toString() + '}';
         }
         console.log(`Order: ${this._idOrder}, Total: ${this.calculateTotal()}, Products: ${productsOrder}`);
     }
@@ -79,4 +79,12 @@ let product1 = new Product('Pantalon', 100);
 let product2 = new Product('Camisa 2', 200);
 /* console.log(product1.toString());
 console.log(product2.toString()); */
+
+let order1 = new Order();
+let product3 = new Product('Camisa 3', 300);
+order1.addProduct(product3);
+order1.addProduct(product1);
+order1.addProduct(product2);
+
+order1.showOrder();
 
